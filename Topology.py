@@ -54,6 +54,9 @@ class Topology(object):
         while len(self.messages) > 0:
             msg = self.messages.pop(0)
             self.switches[msg.destination].process_message(msg)
+        for switchID in self.switches:
+            switch = self.switches[switchID]
+            print str(switch.switchID) + ' thinks ' + str(switch.root) + ' is root and that root is ' + str(switch.distance) + ' away through '+str(switch.pathThrough)+'. (activeLinks: ' + str(switch.activeLinks) + ')'
 
     def log_spanning_tree(self, filename):
         # This function drives the logging of the text file representing the spanning tree.  

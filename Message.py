@@ -30,3 +30,6 @@ class Message(object):
             valid = False
         
         return valid
+
+    def to_string(self):
+        return '{root: ' + str(self.root) + ', distance: ' + str(self.distance) + ', origin: ' + str(self.origin) + ', destination: ' + str(self.destination) + ', pathThrough: ' + str(self.pathThrough) + '}'
