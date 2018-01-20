@@ -110,6 +110,7 @@ class Switch(StpSwitch):
         #      2 - 1, 2 - 3
         #      A full example of a valid output file is included (sample_output.txt) with the project skeleton.
         linkStrings = []
+        self.activeLinks.sort()
         for linkID in self.activeLinks:
             linkStrings.append(str(self.switchID) + ' - ' + str(linkID))
         return ', '.join(linkStrings)
